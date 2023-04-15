@@ -36,14 +36,13 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const playerSelection = "Rock";
+
 const computerSelection = getComputerChoice();
-console.log(playerSelection, computerSelection);
-console.log(playRound(playerSelection, computerSelection));
 
 function game() {
     var counter = 0;
     for(let i = 0; i < 5; i++) {
+        var playerSelection = prompt("Make your move: ");
         playRound(playerSelection, computerSelection);
         if(playRound(playerSelection, computerSelection) == "You win! Paper beats Rock!" || playRound(playerSelection, computerSelection)=="You win! Rock beats Scissor!" || playRound(playerSelection, computerSelection)=="You win! Scissor beats Paper!"){
             counter++;
@@ -53,7 +52,7 @@ function game() {
         }
         else if(playRound(playerSelection,computerSelection)=="Its a Tie!" ){
             counter++;
-            counter--;
+            counter--; 
         }
         console.log(playRound(playerSelection, computerSelection));
     }
