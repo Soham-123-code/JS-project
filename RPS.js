@@ -46,14 +46,14 @@ function game() {
         var playerSelection = prompt("Make your move: ");
         playRound(playerSelection, computerSelection);
         if(playRound(playerSelection, computerSelection) == "You win! Paper beats Rock!" || playRound(playerSelection, computerSelection)=="You win! Rock beats Scissor!" || playRound(playerSelection, computerSelection)=="You win! Scissor beats Paper!"){
-            counter++;
+            pCounter++;
         }
         else if(playRound(playerSelection,computerSelection)=="You lose! Paper beats Rock!" || playRound(playerSelection, computerSelection)=="You lose! Rock beats Scissor!" || playRound(playerSelection, computerSelection)=="You lose! Scissor beats Paper!"){
-            counter--;
+            cCounter--;
         }
         else if(playRound(playerSelection,computerSelection)=="Its a Tie!" ){
-            counter++;
-            counter--; 
+            pCounter++;
+            pCounter--; 
         }
         console.log(playRound(playerSelection, computerSelection));
     }
