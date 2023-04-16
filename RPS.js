@@ -8,28 +8,28 @@ console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == "Rock" && computerSelection == "Paper") {
-        return "You lose! Paper beats Rock!";
+        return "You lose!";
     }
     else if(playerSelection == "Rock" && computerSelection == "Scissor"){
-        return "You win! Rock beats Scissor!";
+        return "You win!";
     }
     else if(playerSelection == "Rock" && computerSelection == "Rock"){
         return "Its a Tie!";
     }
     else if(playerSelection == "Paper" && computerSelection == "Rock"){
-        return "You win! Paper beats Rock!";
+        return "You win!";
     }
     else if(playerSelection == "Paper" && computerSelection == "Scissor"){
-        return "You lose! Scissor beats Paper!";
+        return "You lose!";
     }
     else if(playerSelection == "Paper" && computerSelection == "Paper"){
         return "Its a Tie!";
     }
     else if(playerSelection == "Scissor" && computerSelection == "Rock"){
-        return "You lose! Rock beats Scissor!";
+        return "You lose!";
     }
     else if(playerSelection == "Scissor" && computerSelection == "Paper"){
-        return "You win! Scissor beats Paper!";
+        return "You win!";
     }
     else if(playerSelection == "Scissor" && computerSelection == "Scissor"){
         return "Its a Tie!";
@@ -40,7 +40,8 @@ function playRound(playerSelection, computerSelection) {
 const computerSelection = getComputerChoice();
 
 function game() {
-    var counter = 0;
+    var pCounter = 0;
+    var cCounter = 0;
     for(let i = 0; i < 5; i++) {
         var playerSelection = prompt("Make your move: ");
         playRound(playerSelection, computerSelection);
