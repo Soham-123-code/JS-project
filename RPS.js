@@ -49,21 +49,21 @@ function game() {
             pCounter++;
         }
         else if(playRound(playerSelection,computerSelection)=="You lose! Paper beats Rock!" || playRound(playerSelection, computerSelection)=="You lose! Rock beats Scissor!" || playRound(playerSelection, computerSelection)=="You lose! Scissor beats Paper!"){
-            cCounter--;
+            cCounter++;
         }
         else if(playRound(playerSelection,computerSelection)=="Its a Tie!" ){
             pCounter++;
             pCounter--; 
         }
         console.log(playRound(playerSelection, computerSelection));
+        if(pCounter == 5){
+            return "Congrats! Player Wins!";
+        }
+        else if(cCounter == 5){
+            return "Computer wins! Better Luck Next Time"
+        }
     }
     console.log(counter);
-    if(counter >= 3){
-        return "Congrats! Player Wins!";
-    }
-    else {
-        return "Computer wins! Better Luck Next Time"
-    }
 }
 
 console.log(game());
