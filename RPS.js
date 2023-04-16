@@ -42,14 +42,16 @@ const computerSelection = getComputerChoice();
 function game() {
     var pCounter = 0;
     var cCounter = 0;
-    for(let i = 0; i < 5; i++) {
+    for(var i=0; i<20; i++) {
         var playerSelection = prompt("Make your move: ");
         playRound(playerSelection, computerSelection);
-        if(playRound(playerSelection, computerSelection) == "You win! Paper beats Rock!" || playRound(playerSelection, computerSelection)=="You win! Rock beats Scissor!" || playRound(playerSelection, computerSelection)=="You win! Scissor beats Paper!"){
+        if(playRound(playerSelection, computerSelection) == "You win!"){
             pCounter++;
+            console.log(pCounter);
         }
-        else if(playRound(playerSelection,computerSelection)=="You lose! Paper beats Rock!" || playRound(playerSelection, computerSelection)=="You lose! Rock beats Scissor!" || playRound(playerSelection, computerSelection)=="You lose! Scissor beats Paper!"){
+        else if(playRound(playerSelection,computerSelection)=="You lose!"){
             cCounter++;
+            console.log(cCounter);
         }
         else if(playRound(playerSelection,computerSelection)=="Its a Tie!" ){
             pCounter++;
@@ -58,12 +60,13 @@ function game() {
         console.log(playRound(playerSelection, computerSelection));
         if(pCounter == 5){
             return "Congrats! Player Wins!";
+            break;
         }
         else if(cCounter == 5){
-            return "Computer wins! Better Luck Next Time"
+            return "Computer wins! Better Luck Next Time";
+            break;
         }
     }
-    console.log(counter);
 }
 
 console.log(game());
